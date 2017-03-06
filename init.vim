@@ -9,7 +9,8 @@ Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Valloric/YouCompleteMe'
 Plug 'tpope/vim-fugitive'
-Plug 'vim-syntastic/syntastic'
+"Plug 'vim-syntastic/syntastic'
+Plug 'neomake/neomake'
 Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-sensible'
 Plug 'scrooloose/nerdcommenter'
@@ -19,6 +20,7 @@ Plug 'ap/vim-css-color'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-endwise'
 Plug 'majutsushi/tagbar'
+Plug 'ctrlpvim/ctrlp.vim'
 
 call plug#end()
 
@@ -170,3 +172,4 @@ let g:tagbar_autofocus=1
 let g:tagbar_autoclose=0
 "}}}
 
+autocmd! BufWritePost * Neomake
