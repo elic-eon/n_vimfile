@@ -5,6 +5,8 @@
 ```
 git clone git://github.com/elic-eon/n_vimfile.git ~/.config/nvim
 nvim +PlugInstall +qall
+cd ~/.local/share/nvim/plugged/YouCompleteMe/
+./install.py --clang-completer
 ```
 2. Update plug-in
 ```
