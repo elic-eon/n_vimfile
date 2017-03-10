@@ -9,7 +9,6 @@ Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Valloric/YouCompleteMe'
 Plug 'tpope/vim-fugitive'
-"Plug 'vim-syntastic/syntastic'
 Plug 'neomake/neomake'
 Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-sensible'
@@ -21,6 +20,9 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-endwise'
 Plug 'majutsushi/tagbar'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'xolox/vim-easytags'
+Plug 'xolox/vim-misc'
+Plug 'TagHighlight'
 
 call plug#end()
 
@@ -34,6 +36,7 @@ set number
 set novisualbell
 set errorbells
 set textwidth=80
+set colorcolumn=80
 set nowrap
 set noruler
 set wrapscan
@@ -61,6 +64,7 @@ set spelllang=en_us
 set nobackup noswapfile
 
 set synmaxcol=0
+syntax on
 
 " fold setting {{{
 set foldenable foldcolumn=1 foldlevel=2 foldminlines=3
@@ -141,6 +145,7 @@ vmap <S-TAB> <gv
 
 " nerdcommenter shortcut
 map <Leader><Leader> <Leader>c<space>
+nnoremap <leader>jd :YcmCompleter GoTo<CR>
 
 " sudo to write
 cnoremap w!! w !sudo tee % >/dev/null
@@ -171,5 +176,15 @@ let g:tagbar_left=1
 let g:tagbar_autofocus=1
 let g:tagbar_autoclose=0
 "}}}
+let g:easytags_async = 1
+let g:easytags_file = '~/.config/nvim/tags'
+let g:easytags_resolve_links = 1
+let g:easytags_by_filetype = 1
+let g:easytags_dynamic_files = 1
+let g:easytags_include_members = 1
+let g:easytags_events = ['BufWritePost']
 
 autocmd! BufWritePost * Neomake
+
+call color#custom()
+" vim:set ft=vim sw=2 ts=2:
